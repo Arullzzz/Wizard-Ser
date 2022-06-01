@@ -56,7 +56,7 @@ module.exports = {
           exp: 0,
           limit: 10,
           lastclaim: 0,
-          registered: false,
+          registered: true,
           name: this.getName(m.sender),
           age: -1,
           regTime: -1,
@@ -66,7 +66,7 @@ module.exports = {
           level: 0,
           call: 0,
           role: 'Bronze',
-          autolevelup: false,
+          autolevelup: true,
           pc: 0,
           warning: 0,
           joincount: 0,
@@ -80,8 +80,8 @@ module.exports = {
         if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
         if (chat) {
           if (!('isBanned' in chat)) chat.isBanned = false
-          if (!('welcome' in chat)) chat.welcome = false
-          if (!('detect' in chat)) chat.detect = false
+          if (!('welcome' in chat)) chat.welcome = true
+          if (!('detect' in chat)) chat.detect = true
           if (!('sWelcome' in chat)) chat.sWelcome = ''
           if (!('sBye' in chat)) chat.sBye = ''
           if (!('sPromote' in chat)) chat.sPromote = ''
@@ -89,14 +89,14 @@ module.exports = {
           if (!('descUpdate' in chat)) chat.descUpdate = true
           if (!('stiker' in chat)) chat.stiker = false
           if (!('delete' in chat)) chat.delete = true
-          if (!('antiLink' in chat)) chat.antiLink = false
+          if (!('antiLink' in chat)) chat.antiLink = true
           if (!isNumber(chat.expired)) chat.expired = 0
           if (!('antiBadword' in chat)) chat.antiBadword = true
           if (!('viewonce' in chat)) chat.viewonce = true
         } else global.db.data.chats[m.chat] = {
           isBanned: false,
-          welcome: false,
-          detect: false,
+          welcome: true,
+          detect: true,
           sWelcome: '',
           sBye: '',
           sPromote: '',
@@ -104,7 +104,7 @@ module.exports = {
           descUpdate: true,
           stiker: false,
           delete: true,
-          antiLink: false,
+          antiLink: true,
           expired: 0,
           antiBadword: true,
           viewonce: true,
